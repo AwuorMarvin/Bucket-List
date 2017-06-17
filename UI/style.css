@@ -1,0 +1,28 @@
+form.login {
+    width: 20em;
+}
+form.sign-up {
+    width: 20em;
+}
+.body {
+    margin-top: 100px;
+    margin-left: 13px;
+}
+.btn-save {
+    margin-left: 10px;
+}
+.btn-profile {
+    float: right;
+    margin-top: -50px;
+}
+.sign-up {
+    width: 350px;
+    margin: 0 auto;
+}
+.login {
+    width: 350px;
+    margin: 0 auto;
+}
+h1 {
+    text-align: center;
+}

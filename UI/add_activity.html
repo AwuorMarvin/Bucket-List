@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Bucket</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!--Navbar-->
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">The Bucket</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/profile">Profile</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li class="pull-right"><a href="/signup">Sign Up</a></li>
+                        <li class="pull-right"><a href="/login">Log In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--form for add-activity page-->
+        <div class="container">
+            <h1>Add an Activity</h1>
+            <form class="activity">
+                <div class="form-group">
+                    <div class="col-xs-2">
+                        <label for="inputsm">Title</label>
+                        <input class="form-control input-sm" id="inputsm" type="text">
+                    </div>
+                </div>
+            </form>
+            <form>
+                <div class="form-group body">
+                    <label for="activity">Body</label>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+            </form>
+            <button class="btn btn-lg btn-info btn-save">Save</button>
+        </div>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
