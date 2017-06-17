@@ -11,6 +11,10 @@ form.sign-up {
 .btn-save {
     margin-left: 10px;
 }
+.btn-profile {
+    float: right;
+    margin-top: -50px;
+}
 .sign-up {
     width: 350px;
     margin: 0 auto;
