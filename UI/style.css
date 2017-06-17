@@ -19,6 +19,9 @@ form.sign-up {
     width: 350px;
     margin: 0 auto;
 }
+span {
+    font-size: 20px;
+}
 .login {
     width: 350px;
     margin: 0 auto;
