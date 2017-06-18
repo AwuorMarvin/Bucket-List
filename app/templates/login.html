@@ -3,8 +3,10 @@
     <head>
         <title>The Bucket</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="../static/style.css" rel="stylesheet">
     </head>
     <body>
+        <!--Navbar-->
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
@@ -16,16 +18,31 @@
                         <li><a href="/profile">Profile</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/add_bucketlist">Bucketlists</a></li>
-                        <li class="pull-right"><a href="/signup">Sign Up</a></li>
-                        <li class="pull-right"><a href="/login">Log In</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="container">
-            <div class="jumbotron text-center">
-                <h1>About The Bucket</h1>
-                <p class="lead">The Bucket is an app that lets you keep track of the different activities that you might want to experience in the course of your life. Through it, you are able to manage these activities by creating, edit, or delete them as you so wish.</p>
+            <!--The Login Form-->
+            <div class="well login">
+                <h1>Log In</h1>
+                <form class="login">
+                    <div class="form-group">
+                        <label for="email">Username</label>
+                        <input type="email" class="form-control" id="usr">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd">
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Remember me</label>
+                    </div>
+                </form>
+                <button class="btn-info btn-lg">Log In</button>
+                <a href="/signup"> Or Sign Up</a>
+            </div>
+        </div>
         </div>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
