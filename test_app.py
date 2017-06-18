@@ -5,10 +5,10 @@ from app import app
 class BucketListTestCase(unittest.TestCase):
     """Testcases for the different aspects of the app"""
     def test_if_index_page_loads(self):
-        """Testing the actual page rendered is the login page"""
+        """Testing the actual page rendered is the home page"""
         actual = app.test_client(self)
         expected = actual.get('/', content_type='html/text')
-        self.assertTrue(b'Welcome to the Bucket' in expected.data, msg="Check index page")
+        self.assertTrue(b'Welcome to the Bucket' in expected.data, msg="Check home page")
 
     def test_response_from_login(self):
         """Testing response from rendering login page"""
