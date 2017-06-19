@@ -40,10 +40,6 @@ To run the tests that come bundled with the app, type the following command in t
 pytest test_app.py
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
 * [Python 3.6](https://www.python.org/)
@@ -51,7 +47,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Billie Thompson** - *Most, if not everything*
+* **Awuor Marvin** - *Most, if not everything*
 
 Hats off to the reviewers who assisted in this project.
 
