@@ -20,6 +20,13 @@ cd Bucket-List
 ```
 Install the required packages
 
+Create and activate a virtualenv
+
+```
+virtualenv my_env
+source my_env/Source/activate
+```
+
 ```
 pip intall -r requirements.txt
 ```
