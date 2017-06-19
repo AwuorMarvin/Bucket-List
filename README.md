@@ -18,7 +18,6 @@ Navigate to the root folder
 ```
 cd Bucket-List
 ```
-Install the required packages
 
 Create and activate a virtualenv
 
@@ -26,6 +25,7 @@ Create and activate a virtualenv
 virtualenv my_env
 source my_env/Source/activate
 ```
+Install the required packages
 
 ```
 pip intall -r requirements.txt
