@@ -23,7 +23,7 @@ class BucketListTestCase(unittest.TestCase):
         self.assertTrue(b'Log In' in expected.data, msg="The login page does not load correctly")
 
     def test_missing_templates_status(self):
-        """Testing if the custom 404 page loads for non-existent paths"""
+        """Testing status code response for non-existent paths"""
         actual = app.test_client(self)
         expected = actual.get('/missing_view', content_type='html/text')
         self.assertEqual(expected.status_code, 404)
