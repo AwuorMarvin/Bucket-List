@@ -65,4 +65,4 @@ This project is unlicensed. Feel free to do whatever you want with it.
 
 * Tuts
 * Peter Maina 
-* All bootcamp 19 members
+* All bootcamp 19 members and the LF's
