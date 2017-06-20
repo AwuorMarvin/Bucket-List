@@ -16,7 +16,6 @@ def about():
 
 @app.route('/login/', methods=["GET", "POST"], strict_slashes=False)
 def login():
-    
     """Defines the route for the login page"""
     form = LoginForm()
     if form.validate_on_submit():
@@ -28,7 +27,7 @@ def signup():
     """Defines the route for the signup page"""
     form = RegisterForm()
     if form.validate_on_submit():
-        return render_template('profile.html') 
+        return render_template('profile.html')
     return render_template('signup.html', form=form)
 
 @app.route('/profile')

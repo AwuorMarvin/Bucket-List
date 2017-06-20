@@ -13,16 +13,16 @@ class RegisterForm(FlaskForm):
     """Form for creating account"""
     name = StringField('Name', validators=[DataRequired(), Length(min=5, max=80)])
     email = StringField('Email',
-        validators=[DataRequired(), 
-        Email(message='Enter a valid email'), Length(min=6, max=40)]
-    )
+                        validators=[DataRequired(),
+                                    Email(message='Enter a valid email'), Length(min=6, max=40)]
+                       )
     username = StringField('Username', validators=[DataRequired(), Length(min=5, max=25)])
     password = PasswordField('Password', validators=[DataRequired(), Length(min=6, max=25)])
     confirm_password = PasswordField('Repeat password',
-        validators=[
-            DataRequired(), EqualTo('password', message='The passwords need to match. Try again.')
-        ]
-    )
+                                     validators=[
+                                         DataRequired(),
+                                         EqualTo('password', message='Passwords should match.')]
+                                    )
     remember = BooleanField('remember me')
     submit = SubmitField('Register')
     
