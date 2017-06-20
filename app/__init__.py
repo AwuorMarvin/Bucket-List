@@ -10,6 +10,7 @@ Bootstrap(app)
 app.config['SECRET_KEY'] = 'asamplerandomstring'
 # Load the views
 from app import views
+from app import forms
 
 def create_app(config_name):
     login_manager.init_app(app)

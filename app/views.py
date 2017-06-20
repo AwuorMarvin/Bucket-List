@@ -2,7 +2,7 @@
 from flask import render_template
 from app import app
 
-from .auth.forms import RegisterForm, LoginForm
+from .forms import RegisterForm, LoginForm
 
 @app.route('/')
 def index():
