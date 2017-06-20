@@ -12,12 +12,12 @@ def about():
     """Defines the route for the about page"""
     return render_template('about.html')
 
-@app.route('/login')
+@app.route('/login/')
 def login():
     """Defines the route for the login page"""
     return render_template('login.html')
 
-@app.route('/signup')
+@app.route('/signup/')
 def signup():
     """Defines the route for the signup page"""
     return render_template('signup.html')

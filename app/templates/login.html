@@ -3,7 +3,7 @@
     <head>
         <title>The Bucket</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
     </head>
     <body>
         <!--Navbar-->
@@ -28,11 +28,11 @@
                 <h1>Log In</h1>
                 <form class="login">
                     <div class="form-group">
-                        <label for="email">Username</label>
+                        <label>Username</label>
                         <input type="email" class="form-control" id="usr">
                     </div>
                     <div class="form-group">
-                        <label for="pwd">Password:</label>
+                        <label>Password:</label>
                         <input type="password" class="form-control" id="pwd">
                     </div>
                     <div class="checkbox">
