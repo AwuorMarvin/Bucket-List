@@ -1,10 +1,12 @@
 from flask import Flask
+from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 
 login_manager = LoginManager()
 
 # Initialize the app
 app = Flask(__name__, instance_relative_config=True)
+Bootstrap(app)
 app.config['SECRET_KEY'] = 'asamplerandomstring'
 # Load the views
 from app import views

@@ -29,17 +29,7 @@ def signup():
     form = RegisterForm()
     if form.validate_on_submit():
         return render_template('profile.html')
-    # try:
-    #     form = RegistrationForm(request.form)
-
-    #     if request.method == "POST" and form.validate():
-    #         username = form.username.data
-    #         email = form.email.data
-    #         password = SHA256_crypt.encrypt((str(form.password.data)))
-    # except Exception:
-    #     pass
-    # return render_template('signup.html')
-
+        
 @app.route('/profile')
 def profile():
     """Defines the route for the profile page"""
