@@ -2,6 +2,8 @@
 from flask import render_template
 from app import app
 
+from .auth.forms import RegisterForm, LoginForm
+
 @app.route('/')
 def index():
     """Defines the route for the home page"""
@@ -12,15 +14,31 @@ def about():
     """Defines the route for the about page"""
     return render_template('about.html')
 
-@app.route('/login/')
+@app.route('/login/', methods=["GET", "POST"], strict_slashes=False)
 def login():
+    
     """Defines the route for the login page"""
+    form = LoginForm()
+    if form.validate_on_submit():
+        return render_template('profile.html')
     return render_template('login.html')
 
-@app.route('/signup/')
+@app.route('/signup/', methods=["GET", "POST"], strict_slashes=False)
 def signup():
     """Defines the route for the signup page"""
-    return render_template('signup.html')
+    form = RegisterForm()
+    if form.validate_on_submit():
+        return render_template('profile.html')
+    # try:
+    #     form = RegistrationForm(request.form)
+
+    #     if request.method == "POST" and form.validate():
+    #         username = form.username.data
+    #         email = form.email.data
+    #         password = SHA256_crypt.encrypt((str(form.password.data)))
+    # except Exception:
+    #     pass
+    # return render_template('signup.html')
 
 @app.route('/profile')
 def profile():

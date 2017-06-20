@@ -26,10 +26,10 @@
             <!--The Login Form-->
             <div class="well login">
                 <h1>Log In</h1>
-                <form class="login">
+                <form class="login" method="POST", action="/login">
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="email" class="form-control" id="usr">
+                        <input type="usr" class="form-control" id="usr">
                     </div>
                     <div class="form-group">
                         <label>Password:</label>
@@ -38,9 +38,16 @@
                     <div class="checkbox">
                         <label><input type="checkbox"> Remember me</label>
                     </div>
+                    <div class="form-actions">
+                        <center>
+                            <button type="submit" class="btn btn-lg btn-info">Log In</button>
+                        </center>
+                    </div>
                 </form>
-                <button class="btn-info btn-lg">Log In</button>
-                <a href="/signup"> Or Sign Up</a>
+                <br>
+                <div class="text-center">
+                    <p class="p-login">Don't have an account?<a href="/signup"> Sign Up</a></p>
+                </div>
             </div>
         </div>
         </div>
