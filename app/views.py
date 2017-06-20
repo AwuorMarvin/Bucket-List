@@ -35,6 +35,10 @@ def signup():
 def profile():
     """Defines the route for the profile page"""
     return render_template('profile.html')
+@app.route('/add_bucketlist')
+def add_bucketlist():
+    """Defines the route for the add bucketlist page"""
+    return render_template('add_bucketlist.html')
 
 #Handle errors where a template is missing
 @app.errorhandler(404)
