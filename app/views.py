@@ -28,8 +28,9 @@ def signup():
     """Defines the route for the signup page"""
     form = RegisterForm()
     if form.validate_on_submit():
-        return render_template('profile.html')
-        
+        return '<h1> Hello' + form.username.data + '.</h1>' 
+    return render_template('signup.html', form=form)
+
 @app.route('/profile')
 def profile():
     """Defines the route for the profile page"""
