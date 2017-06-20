@@ -1,8 +1,11 @@
 form.login {
     width: 20em;
 }
-form.sign-up {
-    width: 20em;
+a:link {
+    text-decoration: none;
+}
+.signup {
+    width: 50%;
 }
 .body {
     margin-top: 100px;
@@ -21,6 +24,12 @@ form.sign-up {
 }
 span {
     font-size: 20px;
+}
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+    width: 100%;
 }
 .login {
     width: 350px;
