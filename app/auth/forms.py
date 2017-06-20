@@ -7,6 +7,7 @@ class LoginForm(FlaskForm):
     """Enables registered users to login"""
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
+    remember = BooleanField('Remember me')
 
 class RegisterForm(FlaskForm):
     """Form for creating account"""

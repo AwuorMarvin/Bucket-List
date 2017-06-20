@@ -21,7 +21,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         return render_template('profile.html')
-    return render_template('login.html')
+    return render_template('login.html', form=form)
 
 @app.route('/signup/', methods=["GET", "POST"], strict_slashes=False)
 def signup():
