@@ -26,6 +26,13 @@
         <div class="container">
             <!--About Description-->
             <h1>Welcome, User.</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <h3>{{ message }}</h3>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <button class="btn btn-lg btn-info btn-profile">Add Bucketlist</button>
             <div class="well">
                 <h4>Below are your Bucketlists. Click to view. If none, go ahead and create using the button on the right.</h4>

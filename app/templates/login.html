@@ -33,6 +33,13 @@ Sign Up
     
     <div class="col-md-4"></div>
     <div class="well signup col-md-4">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <h3>{{ message }}</h3>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
         <h2 class="form-signin-heading">Log In</h2>
         {{ form.hidden_tag()}}
         {{ wtf.form_field(form.username)}}
