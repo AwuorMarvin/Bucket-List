@@ -63,7 +63,8 @@ def add_bucketlist():
         user_bucket = Bucket()
 
         user_bucket.create_bucket(title, description)
-        buck = list(user_bucket.bucket_list.items())
+        buck = user_bucket.bucketlist
+        flash('Bucketlist added successfully')
         
         return render_template('profile.html', data=buck)
     else:
@@ -75,17 +76,6 @@ def before_request():
     g.user = None
     if 'user' in session:
         g.user = session['user']
-
-# @app.route('/getsession')
-# def getsession():
-#     if 'user' in session:
-#         return session['user']
-#     else:
-#         return render_template('home.html')
-
-# @app.route('/dropsession')
-# def dropsession():
-#     session.pop('user', None)
 
 @app.route('/logout')
 def logout():
