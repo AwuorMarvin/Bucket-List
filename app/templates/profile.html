@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>The Bucket</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../static/css/style.css">
@@ -11,13 +13,12 @@
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/profile">User</a>
+                    <a class="navbar-brand" href="/profile">Hello, {{session['user']}}</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="/about">About</a></li>
                         <li><a href="/profile">Profile</a></li>
-                        <li><a href="/add_bucketlist">Bucketlists</a></li>
                         <li class="pull-right"><a href="/logout">Log Out</a></li>
                     </ul>
                 </div>
@@ -25,10 +26,41 @@
         </nav>
         <div class="container">
             <!--About Description-->
-            <h1>Welcome, User.</h1>
-            <button class="btn btn-lg btn-info btn-profile">Add Bucketlist</button>
+            <h1>Welcome, {{session['user']}}.</h1>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3>{{ message }}</h3>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
             <div class="well">
-                <h4>Below are your Bucketlists. Click to view. If none, go ahead and create using the button on the right.</h4>
+                <h4>Below are your Bucketlists. Click to view, or create if you dont have any.</h4>
+                <a href="/add_bucketlist" class="btn btn-lg btn-info btn-profile">Add Bucketlist</a>
+                <div class="well">
+                    <ul class="list-group">
+                        {% if data %}
+                            {% for title in data %}
+                                {% for var in title %}
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <h4><a href="/add_activity">{{ var }}</a></h4>
+                                            <li class="list-group-item">{{ title[var] }}</li>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a href="/edit" class="btn btn-sm btn-success btn-activity" style="margin-top: 45px;">Edit</a>
+                                            <a href="/delete" class="btn btn-sm btn-danger btn-activity" style="margin-top: 45px;">Delete</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
         </div>
         
