@@ -1,8 +1,7 @@
 language: python
-python: 
--"3.6.0"
+python: -"3.6.0"
 cache: pip
 install:
 - pip install -r requirements.txt
-script: coverage run -m unittest discover && coverage report
+script: python test_app.py
 after_success: coveralls
