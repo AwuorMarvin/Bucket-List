@@ -1,15 +1,17 @@
-from flask import request
-from .forms import LoginForm
+class Bucket(object):
+    bucketlist = []
 
-class User(object):
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
+    def __init__(self):
+        self.bucket_list = {}
+                
+    def create_bucket(self, title, description):
+        self.bucket_list.update({title:description})
+        self.bucketlist.append(self.bucket_list)
+        return self.bucketlist
 
-        self.app_users = {'Username': self.username, 'Password': self.password}
+    def delete_bucket(self, title):
+        self.bucketlist.pop(self.bucket_list)
 
-    def login_user(self, username, password):
-        if self.app_users[self.username] == self.password:
-           return True
-        else:
-            return False
+    def update_bucket(self, title, description):
+        self.bucket_list.update({title:description})
+                

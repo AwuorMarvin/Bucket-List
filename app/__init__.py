@@ -8,8 +8,9 @@ login_manager = LoginManager()
 app = Flask(__name__, instance_relative_config=True)
 Bootstrap(app)
 app.config['SECRET_KEY'] = 'asamplerandomstring'
-app.config['USERNAME'] = []
-app.config['PASSWORD'] = []
+# app.config['USERNAME'] = []
+# app.config['PASSWORD'] = []
+app.config['CREDENTIALS'] = {}
 # Load the views
 from app import views
 from app import forms
