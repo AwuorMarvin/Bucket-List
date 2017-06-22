@@ -17,7 +17,6 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/about">About</a></li>
                         <li><a href="/profile">Profile</a></li>
-                        <li><a href="/add_bucketlist">Bucketlists</a></li>
                         <li class="pull-right"><a href="/logout">Log Out</a></li>
                     </ul>
                 </div>
@@ -33,9 +32,18 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-            <button class="btn btn-lg btn-info btn-profile">Add Bucketlist</button>
+            <a href="/add_bucketlist" class="btn btn-lg btn-info btn-profile">Add Bucketlist</a>
             <div class="well">
                 <h4>Below are your Bucketlists. Click to view. If none, go ahead and create using the button on the right.</h4>
+                <div class="well">
+                    <ul>
+                        {% if data %}
+                            {% for title in data %}
+                                <li><a href="/add_activity">{{ data['title'] }}</a></li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
         </div>
         
