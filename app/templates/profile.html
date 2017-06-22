@@ -37,10 +37,13 @@
                 <h4>Below are your Bucketlists. Click to view. If none, go ahead and create using the button on the right.</h4>
                 <div class="well">
                     <ul>
-                        {% if buck %}
-                            {% for title in buck %}
-                                <li><a href="/add_activity">{{ buck }}</a></li>
-                                <br>
+                        {% if data %}
+                            {% for title in data %}
+                                {% for var in title %}
+                                    <h4><a href="/add_activity">{{ var }}</a></h4>
+                                    <li>{{ title[var] }}</li>
+                                    <br>
+                                {% endfor %}
                             {% endfor %}
                         {% endif %}
                     </ul>
