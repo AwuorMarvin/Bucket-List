@@ -64,5 +64,5 @@ This project is unlicensed. Feel free to do whatever you want with it.
 ## Acknowledgments
 
 * Tuts
-* Peter Maina 
+* Coffee
 * All bootcamp 19 members and the LF's
