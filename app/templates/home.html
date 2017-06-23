@@ -6,6 +6,8 @@ Bucket List
 
 {% block styles %}
 {{super()}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
 {% endblock %}
 
@@ -26,17 +28,20 @@ Bucket List
 
     <div class="container">
         <div class="jumbotron text-center">
-            {% with messages = get_flashed_messages() %}
+            {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
-                    {% for message in messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h3>{{ message }}</h3>
+                    </div>
                     {% endfor %}
                 {% endif %}
             {% endwith %}
             <h1>Welcome to the Bucket</h1>
             <p class="lead">This is a world where you get to achieve all the activities that you have dreamt about since your childhood. Just sign-up or login to our app and explore a world you never knew existed!</p>
-            <button class="btn btn-lg btn-info"><a href="{{ url_for('login') }}">Login</a></button>
-            <button class="btn btn-lg btn-info"><a href="{{ url_for('signup') }}">Sign Up</a></button>
+            <a href="{{ url_for('login') }}" class="btn btn-lg btn-info">Login</a>
+            <a href="{{ url_for('signup') }}" class="btn btn-lg btn-info">Sign Up</a>
         </div>
     </div><!-- /.container -->
 {% endblock %}
