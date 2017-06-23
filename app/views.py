@@ -20,7 +20,9 @@ def login():
     """Defines the route for the login page"""
     form = LoginForm()
     if form.validate_on_submit():
-        if app.config['CREDENTIALS'][form.username.data] == form.password.data:
+        user = form.username.data
+        pwd = form.password.data
+        if app.config['USERNAME'] == user and app.config['PASSWORD'] == pwd:
             flash('You were successfully logged in')
             session['user'] = form.username.data
             return render_template('profile.html')
@@ -29,7 +31,7 @@ def login():
             render_template('login.html', form=form)
     return render_template('login.html', form=form)
 
-@app.route('/signup/', methods=["GET", "POST"], strict_slashes=False)
+@app.route('/signup', methods=["GET", "POST"], strict_slashes=False)
 def signup():
     """Defines the route for the signup page"""
     form = RegisterForm(request.form)
@@ -38,9 +40,10 @@ def signup():
         username = form.username.data
         password = form.password.data
 
-        app.config['CREDENTIALS'][username] = password
+        app.config['USERNAME'] = username
+        app.config['PASSWORD'] = password
 
-        flash('Signed up as {}, please log in to continue'.format(username))
+        flash('Success! You signed up as {}, please log in to continue'.format(username))
         return redirect(url_for('login'))
     else:
         return render_template('signup.html', form=form)
@@ -65,10 +68,15 @@ def add_bucketlist():
         user_bucket.create_bucket(title, description)
         buck = user_bucket.bucketlist
         flash('Bucketlist added successfully')
-        
+
         return render_template('profile.html', data=buck)
     else:
         return render_template('add_bucketlist.html', data=bucketlist)
+
+@app.route('/add_activity')
+def add_activity():
+    """Defines route for adding activity to a bucketlist"""
+    return render_template('add_activity.html')
 
 @app.before_request
 def before_request():
