@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>The Bucket</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../static/css/style.css">
@@ -11,7 +13,7 @@
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/profile">{{session['user']}}</a>
+                    <a class="navbar-brand" href="/profile">Hello, {{session['user']}}</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -25,10 +27,13 @@
         <div class="container">
             <!--About Description-->
             <h1>Welcome, {{session['user']}}.</h1>
-            {% with messages = get_flashed_messages() %}
+            {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
-                    {% for message in messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h3>{{ message }}</h3>
+                    </div>
                     {% endfor %}
                 {% endif %}
             {% endwith %}
@@ -36,13 +41,20 @@
             <div class="well">
                 <h4>Below are your Bucketlists. Click to view. If none, go ahead and create using the button on the right.</h4>
                 <div class="well">
-                    <ul>
+                    <ul class="list-group">
                         {% if data %}
                             {% for title in data %}
                                 {% for var in title %}
-                                    <h4><a href="/add_activity">{{ var }}</a></h4>
-                                    <li>{{ title[var] }}</li>
-                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <h4><a href="/add_activity">{{ var }}</a></h4>
+                                            <li class="list-group-item">{{ title[var] }}</li>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a href="/edit" class="btn btn-sm btn-success btn-activity" style="margin-top: 45px;">Edit</a>
+                                            <a href="/delete" class="btn btn-sm btn-danger btn-activity" style="margin-top: 45px;">Delete</a>
+                                        </div>
+                                    </div>
                                 {% endfor %}
                             {% endfor %}
                         {% endif %}
