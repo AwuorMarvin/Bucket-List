@@ -1,5 +1,5 @@
+"""Creates class Bucket that inherits from the object class"""
 class Bucket(object):
-    """Creates class Bucket that inherits from the object class"""
     bucketlist = []
 
     def __init__(self):

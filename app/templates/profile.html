@@ -37,9 +37,10 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-            <a href="/add_bucketlist" class="btn btn-lg btn-info btn-profile">Add Bucketlist</a>
+            
             <div class="well">
-                <h4>Below are your Bucketlists. Click to view. If none, go ahead and create using the button on the right.</h4>
+                <h4>Below are your Bucketlists. Click to view, or create if you dont have any.</h4>
+                <a href="/add_bucketlist" class="btn btn-lg btn-info btn-profile">Add Bucketlist</a>
                 <div class="well">
                     <ul class="list-group">
                         {% if data %}
